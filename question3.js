@@ -1,16 +1,17 @@
-// Import Express
-const express = require('express');
-
-// Initialize the app
+const express = require("express");
 const app = express();
-const port = 3000;
+const PORT = 3000;
 
-// Define the /test route
-app.get('/test', (req, res) => {
-    res.json({ message: "Express is working! Lee Alquisola" });
+// Default route for "/"
+app.get("/", (req, res) => {
+  res.send("Welcome to my Express server!");
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+// Route for "/test"
+app.get("/test", (req, res) => {
+  res.json({ message: "Express is working! Alquisola, Lee" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
